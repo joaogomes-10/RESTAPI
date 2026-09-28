@@ -1,0 +1,11 @@
+{
+  "name": "mock-server",
+  "version": "1.0.0",
+  "description": "API simulada (JSON-Server) para o CRUD de alunos e cursos",
+  "scripts": {
+    "start": "json-server --watch ../mock-data/bd.json --port 3001"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

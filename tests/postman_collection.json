@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "Mock API - Alunos e Cursos",
+    "description": "Testes CRUD de alunos e leitura de cursos contra o json-server (bd.json)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3001" }
+  ],
+  "item": [
+    {
+      "name": "Alunos",
+      "item": [
+        {
+          "name": "Listar todos os alunos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/alunos", "host": ["{{baseUrl}}"], "path": ["alunos"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Obter aluno por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/alunos/1", "host": ["{{baseUrl}}"], "path": ["alunos", "1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Criar aluno",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Ines\",\n  \"apelido\": \"Teste\",\n  \"idCurso\": 1,\n  \"anoCurricular\": 1\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/alunos", "host": ["{{baseUrl}}"], "path": ["alunos"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar aluno (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Ines\",\n  \"apelido\": \"TesteEditado\",\n  \"idCurso\": 1,\n  \"anoCurricular\": 2\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/alunos/9", "host": ["{{baseUrl}}"], "path": ["alunos", "9"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar aluno parcialmente (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"anoCurricular\": 3\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/alunos/9", "host": ["{{baseUrl}}"], "path": ["alunos", "9"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Apagar aluno",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/alunos/9", "host": ["{{baseUrl}}"], "path": ["alunos", "9"] }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cursos",
+      "item": [
+        {
+          "name": "Listar todos os cursos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/cursos", "host": ["{{baseUrl}}"], "path": ["cursos"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Obter curso por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": { "raw": "{{baseUrl}}/cursos/1", "host": ["{{baseUrl}}"], "path": ["cursos", "1"] }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
